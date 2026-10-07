@@ -1,0 +1,982 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#101716">
+<meta name="description" content="The Saha Sethi Saga — Nishant & Adrija — 13 & 14 December 2026 — Nirvana River Resort, Rishikesh">
+<title>The Saha Sethi Saga — Nishant & Adrija</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&family=Manrope:wght@400;500;600;700&display=swap');
+
+:root{
+  --ink:#13201e;
+  --ink-2:#1d2d29;
+  --ivory:#f8f3e8;
+  --cream:#efe6d3;
+  --champagne:#d8c18b;
+  --gold:#b99752;
+  --wine:#5b2433;
+  --burgundy:#3f1723;
+  --sage:#9cae9b;
+  --forest:#183f35;
+  --emerald:#205f50;
+  --amber:#d78b31;
+  --yellow:#f0b62f;
+  --blue:#203c55;
+  --line:rgba(255,255,255,.16);
+  --shadow:0 30px 80px rgba(8,18,16,.24);
+  --serif:"Cormorant Garamond", Georgia, serif;
+  --sans:"Manrope","DM Sans",system-ui,sans-serif;
+  --ease:cubic-bezier(.22,1,.36,1);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;background:var(--ink)}
+body{
+  margin:0;
+  background:var(--ivory);
+  color:var(--ink);
+  font-family:var(--sans);
+  overflow-x:hidden;
+}
+body.locked{overflow:hidden}
+button,input,select,textarea{font:inherit}
+button{cursor:pointer}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+
+::selection{background:var(--champagne);color:var(--ink)}
+
+.noise{
+  position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:.045;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E");
+}
+
+/* ---------------- SPLASH ---------------- */
+.splash{
+  position:fixed;inset:0;z-index:10000;
+  display:grid;place-items:center;
+  background:
+    radial-gradient(circle at 50% 38%,rgba(205,174,104,.12),transparent 28%),
+    radial-gradient(circle at 18% 82%,rgba(64,111,94,.22),transparent 32%),
+    linear-gradient(145deg,#0a1413,#14231f 58%,#1e322b);
+  color:#fff;
+  transition:opacity 1s var(--ease),visibility 1s;
+}
+.splash.hidden{opacity:0;visibility:hidden;pointer-events:none}
+.splash::before{
+  content:"";position:absolute;inset:7vw;
+  border:1px solid rgba(216,193,139,.22);
+  border-radius:50% 50% 45% 55%;
+  transform:rotate(-8deg);
+}
+.splash-inner{
+  position:relative;text-align:center;width:min(88vw,620px);padding:30px;
+  animation:splashRise 1.5s var(--ease) both;
+}
+.splash-kicker{
+  font-size:10px;letter-spacing:.38em;text-transform:uppercase;color:#d8c18b;
+  margin-bottom:26px;
+}
+.splash-title{
+  font:600 clamp(58px,15vw,118px)/.72 var(--serif);
+  letter-spacing:-.055em;margin:0;
+}
+.splash-title span{display:block}
+.splash-title .amp{font-style:italic;font-weight:400;font-size:.55em;margin:8px 0}
+.splash-sub{
+  margin:34px auto 0;max-width:340px;
+  font:400 clamp(18px,4.8vw,25px)/1.05 var(--serif);
+  color:#efe6d3;
+}
+.splash-date{
+  margin:28px 0 0;font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:#c9b986;
+}
+.enter-btn{
+  margin-top:38px;border:1px solid rgba(216,193,139,.55);background:rgba(255,255,255,.04);
+  color:#fff;padding:17px 27px;border-radius:999px;letter-spacing:.18em;text-transform:uppercase;
+  font-size:10px;transition:.4s var(--ease);backdrop-filter:blur(12px);
+}
+.enter-btn:hover{background:#d8c18b;color:#12201d;transform:translateY(-3px)}
+.enter-btn .dot{display:inline-block;width:5px;height:5px;border-radius:50%;background:#d8c18b;margin-right:9px;vertical-align:middle}
+
+
+/* ---------------- NEW EDITORIAL ENTRY ---------------- */
+.splash{position:fixed;inset:0;z-index:10000;display:grid;place-items:center;overflow:hidden;background:#10201d;color:#fff;transition:opacity 1s var(--ease),visibility 1s}
+.splash.hidden{opacity:0;visibility:hidden;pointer-events:none}
+.splash-photo{position:absolute;inset:0;background:url("https://i.supaimg.com/d22e5c7d-7490-48d2-bcdd-8dcd86476e68/112589c5-e910-4693-b0fc-018e57169269.jpg") 58% center/cover no-repeat;transform:scale(1.03);filter:saturate(.78)}
+.splash-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(7,19,17,.30),rgba(7,19,17,.40) 42%,rgba(7,19,17,.88)),linear-gradient(90deg,rgba(8,24,20,.48),rgba(8,24,20,.05) 62%,rgba(8,24,20,.40))}
+.splash-frame{position:absolute;inset:22px;border:1px solid rgba(224,203,151,.42);pointer-events:none}
+.splash-inner{position:relative;text-align:center;width:min(91vw,760px);padding:28px 20px 35px;animation:splashRise 1.35s var(--ease) both}
+.splash-top{font-size:9px;letter-spacing:.34em;color:#ead9ad;margin-bottom:12px;text-transform:uppercase}
+.splash-kicker{font-size:9px;letter-spacing:.4em;text-transform:uppercase;color:#f0dfb1;margin-bottom:22px}
+.splash-title{font:500 clamp(66px,15vw,142px)/.68 var(--serif);letter-spacing:-.055em;margin:0;text-shadow:0 10px 35px rgba(0,0,0,.22)}
+.splash-title span{display:block}.splash-title em{display:block;font:italic 400 clamp(25px,5vw,42px)/1 var(--serif);letter-spacing:0;margin:12px 0;color:#ead9ad}
+.splash-saga{font:400 clamp(20px,4.5vw,31px)/1 var(--serif);margin-top:27px;color:#f6f0e3}
+.splash-date{margin:17px 0 25px;font-size:9px;letter-spacing:.27em;text-transform:uppercase;color:#e2d3aa}
+.splash-countdown-label{font-size:8px;letter-spacing:.32em;text-transform:uppercase;color:#e0cf9e;margin-bottom:10px}
+.splash-countdown{display:grid;grid-template-columns:repeat(4,1fr);max-width:560px;margin:0 auto;border:1px solid rgba(255,255,255,.22);background:rgba(10,24,21,.24);backdrop-filter:blur(10px)}
+.splash-countdown>div{padding:13px 4px;border-right:1px solid rgba(255,255,255,.18)}.splash-countdown>div:last-child{border-right:0}
+.splash-countdown b{display:block;font:500 clamp(28px,7vw,48px)/.8 var(--serif);color:#fff}.splash-countdown span{display:block;margin-top:7px;font-size:7px;letter-spacing:.22em;text-transform:uppercase;color:#d8d2c5}
+.enter-btn{margin-top:24px;border:1px solid rgba(216,193,139,.65);background:rgba(10,22,20,.28);color:#fff;padding:15px 27px;border-radius:999px;letter-spacing:.18em;text-transform:uppercase;font-size:9px;transition:.4s var(--ease);backdrop-filter:blur(12px)}
+.enter-btn:hover{background:#d8c18b;color:#12201d;transform:translateY(-3px)}
+
+/* ---------------- PARALLAX DAY REVEALS ---------------- */
+.day-reveal{position:relative;overflow:visible}
+.day-reveal>.day-intro{position:sticky;top:0;height:100svh;min-height:100svh;z-index:1;will-change:transform;transform-origin:center top}
+.day-reveal>.event,.day-reveal>.photo-interlude{position:relative;z-index:2}
+.day-reveal>.event{transform:translateY(12vh);opacity:0;transition:transform .8s var(--ease),opacity .8s var(--ease)}
+.day-reveal>.event.event-open{transform:translateY(0);opacity:1}
+.day-reveal .event-art img{transform:scale(1.08);transition:transform 1.4s var(--ease)}
+.day-reveal.opening .event-art img{transform:scale(1)}
+.day1-reveal{background:#17483e}.day2-reveal{background:#49301d}.day3-reveal{background:#203c55}
+.day-reveal .day-intro{box-shadow:0 30px 70px rgba(0,0,0,.18)}
+.day-reveal .event{box-shadow:0 -30px 70px rgba(0,0,0,.12)}
+.dress-grid-hidden{display:none!important}
+.dress-section{min-height:72svh;display:flex;align-items:center}
+@keyframes splashRise{from{opacity:0;transform:translateY(28px) scale(.98)}to{opacity:1;transform:none}}
+
+/* ---------------- GLOBAL ---------------- */
+.progress{
+  position:fixed;top:0;left:0;height:2px;width:0;background:var(--champagne);z-index:10001;
+}
+.music-toggle{
+  position:fixed;right:16px;top:16px;z-index:500;
+  width:42px;height:42px;border-radius:50%;border:1px solid rgba(255,255,255,.25);
+  background:rgba(18,30,27,.54);color:#fff;backdrop-filter:blur(16px);
+  display:grid;place-items:center;font-size:14px;transition:.35s;
+}
+.music-toggle:hover{transform:scale(1.06);background:rgba(18,30,27,.78)}
+.music-bars{display:flex;gap:2px;align-items:end;height:14px}
+.music-bars i{display:block;width:2px;background:currentColor;border-radius:2px;animation:eq .9s ease-in-out infinite}
+.music-bars i:nth-child(1){height:7px}.music-bars i:nth-child(2){height:12px;animation-delay:.15s}.music-bars i:nth-child(3){height:9px;animation-delay:.3s}
+.music-toggle.paused .music-bars i{animation-play-state:paused;height:3px}
+@keyframes eq{0%,100%{transform:scaleY(.55)}50%{transform:scaleY(1)}}
+
+.section{
+  position:relative;min-height:100svh;display:flex;align-items:center;
+  overflow:hidden;
+}
+.container{width:min(100% - 40px,1120px);margin:auto}
+.eyebrow{
+  font-size:9px;letter-spacing:.35em;text-transform:uppercase;
+  color:var(--gold);font-weight:700;
+}
+.serif{font-family:var(--serif)}
+.reveal{opacity:0;transform:translateY(34px);transition:opacity 1s var(--ease),transform 1s var(--ease)}
+.reveal.visible{opacity:1;transform:none}
+
+/* ---------------- HERO ---------------- */
+.hero{
+  min-height:100svh;color:#fff;
+  background:#10211d;
+  isolation:isolate;
+}
+.hero-photo{
+  position:absolute;inset:0;z-index:-3;
+  background:
+    linear-gradient(180deg,rgba(10,22,20,.10) 0%,rgba(10,22,20,.18) 30%,rgba(10,22,20,.88) 100%),
+    url("https://i.supaimg.com/d22e5c7d-7490-48d2-bcdd-8dcd86476e68/112589c5-e910-4693-b0fc-018e57169269.jpg") 25% 28%/cover no-repeat;
+  transform:scale(1.04);
+}
+.hero::after{
+  content:"";position:absolute;inset:0;z-index:-2;
+  background:linear-gradient(90deg,rgba(12,28,24,.42),transparent 58%,rgba(12,28,24,.12));
+}
+.hero-copy{
+  width:min(92%,980px);margin:auto;padding:120px 0 72px;
+  align-self:end;position:relative;
+}
+.hero-mini{
+  font-size:9px;letter-spacing:.38em;text-transform:uppercase;color:#ead8aa;margin-bottom:22px;
+}
+.hero-title{
+  font:600 clamp(72px,18vw,175px)/.72 var(--serif);
+  letter-spacing:-.065em;margin:0;
+  text-wrap:balance;
+}
+.hero-title span{display:block}
+.hero-title .saga{font-style:italic;font-weight:400;margin-left:.16em}
+.hero-bottom{
+  display:flex;justify-content:space-between;gap:25px;align-items:end;margin-top:42px;
+}
+.hero-note{max-width:370px;font:400 22px/1.08 var(--serif);color:#f3ead9}
+.hero-scroll{
+  font-size:9px;letter-spacing:.25em;text-transform:uppercase;color:#e5d7b8;
+  display:flex;align-items:center;gap:10px;
+}
+.hero-scroll::after{content:"↓";font-size:18px}
+.hero-date{font-size:9px;letter-spacing:.28em;text-transform:uppercase;color:#d7c28e}
+
+/* ---------------- COUNTDOWN ---------------- */
+.countdown-section{
+  background:var(--forest);color:var(--ivory);padding:100px 0;
+  min-height:auto;text-align:center;
+}
+.countdown-heading{font:500 clamp(44px,11vw,78px)/.85 var(--serif);margin:15px auto 16px}
+.countdown-sub{color:#cdd7ca;font-size:12px;letter-spacing:.08em}
+.countdown-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:1px;
+  max-width:760px;margin:55px auto 0;border:1px solid rgba(255,255,255,.12);
+}
+.timebox{padding:24px 8px;border-right:1px solid rgba(255,255,255,.12)}
+.timebox:last-child{border:0}
+.timebox b{display:block;font:500 clamp(40px,10vw,72px)/.8 var(--serif);color:#fff}
+.timebox span{display:block;margin-top:12px;font-size:8px;letter-spacing:.28em;text-transform:uppercase;color:#b9c6bb}
+
+/* ---------------- INTRO ---------------- */
+.intro{
+  min-height:auto;padding:130px 0 115px;background:
+  radial-gradient(circle at 85% 20%,rgba(216,193,139,.18),transparent 25%),
+  var(--ivory);
+}
+.intro-grid{display:grid;grid-template-columns:1fr 1.15fr;gap:70px;align-items:center}
+.intro-portrait{
+  position:relative;aspect-ratio:4/5;overflow:hidden;border-radius:220px 220px 12px 12px;
+  box-shadow:var(--shadow);
+}
+.intro-portrait img{width:100%;height:100%;object-fit:cover;object-position:center}
+.intro-portrait::after{
+  content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(20,32,29,.22));
+}
+.intro-copy h2{
+  font:500 clamp(52px,13vw,110px)/.72 var(--serif);letter-spacing:-.05em;margin:15px 0 35px;
+}
+.intro-copy h2 em{font-weight:400}
+.names{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:35px}
+.person-label{font-size:8px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
+.person-name{font:500 clamp(30px,7vw,48px)/.85 var(--serif)}
+.person-detail{margin-top:10px;font-size:11px;line-height:1.5;color:#59615d}
+.with{font:italic;font:400 28px var(--serif);color:var(--gold);text-align:center;margin-top:28px}
+.venue{margin-top:35px;padding-top:22px;border-top:1px solid rgba(19,32,30,.16);font-size:11px;line-height:1.7}
+.venue strong{display:block;font-size:13px;color:var(--ink);letter-spacing:.06em}
+
+/* ---------------- STORY BREAK ---------------- */
+.story-break{
+  min-height:68svh;background:var(--burgundy);color:var(--ivory);text-align:center;
+  padding:100px 0;display:grid;place-items:center;
+}
+.story-break h2{font:500 clamp(55px,13vw,105px)/.75 var(--serif);margin:18px 0}
+.story-break p{max-width:440px;margin:auto;color:#d9cfc0;font-size:12px;line-height:1.8}
+.story-arrow{margin-top:35px;color:var(--champagne);font-size:10px;letter-spacing:.28em;text-transform:uppercase}
+
+/* ---------------- DAYS ---------------- */
+.day-intro{
+  min-height:74svh;padding:100px 0;display:grid;place-items:center;text-align:center;
+  color:#fff;
+}
+.day-intro .day-number{font:400 clamp(100px,26vw,210px)/.65 var(--serif);opacity:.16}
+.day-intro h2{font:500 clamp(62px,14vw,115px)/.72 var(--serif);margin:-20px 0 25px}
+.day-intro p{max-width:480px;margin:auto;font-size:12px;line-height:1.7;color:rgba(255,255,255,.72)}
+.day1{background:linear-gradient(135deg,#17483e,#102d28)}
+.day2{background:linear-gradient(135deg,#49301d,#6b3a24)}
+.day3{background:linear-gradient(135deg,#203c55,#13283b)}
+
+/* ---------------- EVENTS ---------------- */
+.event{
+  min-height:auto;padding:0;
+  display:grid;grid-template-columns:1fr 1fr;
+  background:var(--ivory);
+}
+.event:nth-of-type(even){background:#eee6d6}
+.event.reverse .event-art{order:2}
+.event.reverse .event-info{order:1}
+.event-art{
+  min-height:100svh;position:relative;overflow:hidden;background:#dfe3d8;
+}
+.event-art img{
+  width:100%;height:100%;object-fit:cover;
+  object-position:center;transition:transform 1.2s var(--ease);
+}
+.event:hover .event-art img{transform:scale(1.025)}
+.event-info{
+  padding:80px clamp(30px,7vw,95px);display:flex;flex-direction:column;justify-content:center;
+}
+.event-index{font-size:9px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold)}
+.event-info h3{font:500 clamp(55px,9vw,96px)/.72 var(--serif);letter-spacing:-.045em;margin:18px 0 25px}
+.event-tagline{font:400 23px/1.05 var(--serif);max-width:430px;color:#48504c}
+.event-meta{margin-top:40px;border-top:1px solid rgba(19,32,30,.15)}
+.meta-row{display:grid;grid-template-columns:90px 1fr;gap:15px;padding:16px 0;border-bottom:1px solid rgba(19,32,30,.1)}
+.meta-row span:first-child{font-size:8px;text-transform:uppercase;letter-spacing:.22em;color:var(--gold)}
+.meta-row span:last-child{font-size:11px}
+.event-note{margin-top:26px;font-size:11px;line-height:1.75;color:#646b67;max-width:410px}
+
+/* event-specific tint */
+.haldi .event-info{background:#fff8df}
+.sangeet .event-info{background:#f0e8e4}
+.mayra .event-info{background:#fff1df}
+.wedding .event-info{background:#f5f0e7}
+.reception .event-info{background:#e8e6e0}
+
+/* ---------------- PHOTO INTERLUDE ---------------- */
+.photo-interlude{
+  min-height:88svh;position:relative;display:grid;place-items:center;color:#fff;overflow:hidden;
+}
+.photo-interlude img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.photo-interlude::after{content:"absolute;inset:0;background:linear-gradient(180deg,rgba(12,23,21,.08),rgba(12,23,21,.78))"}
+.photo-interlude .quote{position:relative;z-index:2;text-align:center;width:min(90%,720px)}
+.quote p{font:500 clamp(52px,12vw,105px)/.73 var(--serif);margin:0}
+.quote small{display:block;margin-top:28px;font-size:9px;letter-spacing:.3em;text-transform:uppercase;color:#dfcfaa}
+
+/* ---------------- DRESS CODE ---------------- */
+.dress-section{
+  background:#14221f;color:var(--ivory);padding:120px 0 100px;
+}
+.dress-header{text-align:center;max-width:650px;margin:auto}
+.dress-header h2{font:500 clamp(58px,13vw,105px)/.72 var(--serif);margin:15px 0 20px}
+.dress-header p{font-size:12px;line-height:1.7;color:#bfc9c0}
+.dress-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:65px}
+.dress-card{
+  position:relative;min-height:560px;overflow:hidden;border:1px solid rgba(255,255,255,.13);
+  background:linear-gradient(180deg,#f2eadb,#dcd0ba);color:var(--ink);
+  display:flex;flex-direction:column;justify-content:flex-end;
+  transition:transform .55s var(--ease),box-shadow .55s;
+}
+.dress-card:hover{transform:translateY(-8px);box-shadow:0 30px 60px rgba(0,0,0,.25)}
+.dress-card-art{
+  position:absolute;inset:0 0 120px;
+  display:flex;align-items:center;justify-content:center;padding:14px;
+}
+.dress-card-art img{width:100%;height:100%;object-fit:contain}
+.dress-card-info{
+  position:relative;z-index:2;padding:20px 18px 24px;
+  background:linear-gradient(180deg,transparent,rgba(239,230,211,.97) 24%);
+}
+.dress-card-day{font-size:8px;letter-spacing:.24em;text-transform:uppercase;color:#866b36}
+.dress-card h3{font:500 29px/.82 var(--serif);margin:8px 0}
+.dress-card p{font-size:9px;line-height:1.45;margin:0;color:#555b57}
+.dress-card:nth-child(1){background:linear-gradient(180deg,#fff8dc,#f4d77a)}
+.dress-card:nth-child(2){background:linear-gradient(180deg,#f5e8e6,#c5a9a7)}
+.dress-card:nth-child(3){background:linear-gradient(180deg,#fff0dc,#e8b87c)}
+.dress-card:nth-child(4){background:linear-gradient(180deg,#faf7f0,#dcded4)}
+
+/* ---------------- RSVP ---------------- */
+.rsvp{
+  min-height:100svh;background:
+  radial-gradient(circle at 20% 10%,rgba(216,193,139,.14),transparent 28%),
+  linear-gradient(135deg,#3e1723,#5d2433);
+  color:#fff;padding:110px 0;
+}
+.rsvp-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:80px;align-items:start}
+.rsvp-copy h2{font:500 clamp(65px,14vw,120px)/.68 var(--serif);margin:18px 0 28px}
+.rsvp-copy p{font:400 22px/1.1 var(--serif);max-width:360px;color:#eadfd1}
+.rsvp-form{
+  padding:28px;border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.06);
+  backdrop-filter:blur(18px);
+}
+.field{margin-bottom:16px}
+.field label{display:block;font-size:8px;letter-spacing:.2em;text-transform:uppercase;color:#d8c18b;margin-bottom:7px}
+.field input,.field select,.field textarea{
+  width:100%;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.07);
+  color:#fff;padding:14px 14px;outline:none;border-radius:2px;
+}
+.field input::placeholder,.field textarea::placeholder{color:rgba(255,255,255,.46)}
+.field select option{color:#111}
+.field textarea{min-height:100px;resize:vertical}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.choice-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.choice{
+  position:relative;border:1px solid rgba(255,255,255,.18);padding:14px;
+  cursor:pointer;text-align:center;font-size:10px;letter-spacing:.08em;
+}
+.choice input{position:absolute;opacity:0}
+.choice:has(input:checked){background:#d8c18b;color:#18201d;border-color:#d8c18b}
+.submit{
+  width:100%;border:0;background:#d8c18b;color:#15201d;padding:17px;
+  letter-spacing:.16em;text-transform:uppercase;font-size:9px;font-weight:700;margin-top:8px;
+}
+.submit:hover{background:#ead7a5}
+.form-foot{font-size:8px;color:rgba(255,255,255,.55);line-height:1.6;margin-top:12px;text-align:center}
+
+/* ---------------- MODALS ---------------- */
+.modal{
+  position:fixed;inset:0;z-index:2000;background:rgba(8,16,14,.82);
+  backdrop-filter:blur(18px);display:none;align-items:center;justify-content:center;padding:18px;
+}
+.modal.open{display:flex}
+.modal-box{
+  width:min(100%,900px);max-height:92svh;overflow:auto;background:var(--ivory);color:var(--ink);
+  position:relative;box-shadow:0 40px 100px rgba(0,0,0,.45);
+}
+.modal-head{padding:30px 30px 18px;border-bottom:1px solid rgba(19,32,30,.12)}
+.modal-head h2{font:500 52px/.75 var(--serif);margin:8px 0}
+.modal-close{
+  position:absolute;right:18px;top:18px;width:38px;height:38px;border-radius:50%;
+  border:1px solid rgba(19,32,30,.18);background:rgba(247,240,223,.92);color:var(--ink);
+  z-index:9999;cursor:pointer;display:flex;align-items:center;justify-content:center;
+}
+.itinerary-modal-body{padding:25px 30px 35px}
+.mini-event{padding:22px 0;border-bottom:1px solid rgba(19,32,30,.12)}
+.mini-event:last-child{border:0}
+.mini-event h4{font:500 34px/.8 var(--serif);margin:5px 0 10px}
+.mini-meta{font-size:9px;letter-spacing:.13em;text-transform:uppercase;color:#786138}
+.dress-modal-grid{padding:24px;display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.dress-modal-card{background:#eee5d5;min-height:430px;padding:12px;display:flex;flex-direction:column}
+.dress-modal-card img{width:100%;height:330px;object-fit:contain;flex:1}
+.dress-modal-card h4{font:500 30px/.8 var(--serif);margin:12px 5px 2px}
+.dress-modal-card p{font-size:9px;margin:0 5px 10px;color:#5c625e}
+
+/* ---------------- SUCCESS ---------------- */
+.success{
+  position:fixed;inset:0;z-index:4000;background:rgba(9,20,17,.86);backdrop-filter:blur(18px);
+  display:none;align-items:center;justify-content:center;padding:20px;
+}
+.success.open{display:flex}
+.success-box{
+  width:min(100%,520px);background:var(--ivory);color:var(--ink);padding:45px 30px;text-align:center;
+}
+.success-box .check{font-size:40px;color:var(--gold)}
+.success-box h3{font:500 55px/.75 var(--serif);margin:18px 0}
+.success-box p{font-size:12px;line-height:1.7;color:#5b625e}
+
+/* ---------------- FOOTER ---------------- */
+footer{
+  background:#0d1715;color:#d8d1c4;padding:38px 20px;text-align:center;
+  font-size:9px;letter-spacing:.2em;text-transform:uppercase;
+}
+footer span{color:#d8c18b}
+
+/* ---------------- RESPONSIVE ---------------- */
+@media(max-width:850px){
+  .intro-grid,.rsvp-grid{grid-template-columns:1fr;gap:50px}
+  .intro-portrait{width:min(100%,470px);margin:auto}
+  .names{grid-template-columns:1fr}
+  .event{display:block}
+  .event-art{min-height:auto;height:auto;aspect-ratio:9/16}
+  .event.reverse .event-art{order:initial}
+  .event.reverse .event-info{order:initial}
+  .event-info{padding:72px 28px}
+  .dress-grid{grid-template-columns:1fr 1fr}
+  .dress-card{min-height:520px}
+  .dress-modal-grid{grid-template-columns:1fr}
+}
+@media(max-width:560px){
+  .container{width:min(100% - 28px,1120px)}
+  .hero-copy{padding:110px 0 50px}
+  .hero-bottom{display:block}
+  .hero-scroll{margin-top:28px}
+  .countdown-grid{margin-top:35px}
+  .timebox{padding:18px 4px}
+  .timebox b{font-size:39px}
+  .timebox span{font-size:7px;letter-spacing:.16em}
+  .intro{padding:90px 0}
+  .story-break{min-height:70svh}
+  .dress-grid{grid-template-columns:1fr 1fr;gap:8px}
+  .dress-card{min-height:400px}
+  .dress-card-info{padding:14px 12px 18px}
+  .dress-card h3{font-size:25px}
+  .dress-card p{font-size:8px}
+  .rsvp{padding:85px 0}
+  .two{grid-template-columns:1fr}
+  .rsvp-grid{gap:38px}
+  .rsvp-form{padding:18px}
+  .splash::before{inset:7vw;border-radius:48%}
+}
+
+@media(max-width:560px){
+  .splash-frame{inset:12px}.splash-photo{background-position:58% center;background-size:auto 100%;background-color:#10201d}
+  .splash-inner{padding:24px 14px 28px}.splash-top{font-size:7px;letter-spacing:.24em}.splash-kicker{font-size:7px;letter-spacing:.32em;margin-bottom:17px}
+  .splash-title{font-size:72px;line-height:.66}.splash-title em{font-size:25px;margin:11px 0}.splash-saga{font-size:20px;margin-top:22px}
+  .splash-date{font-size:7px;letter-spacing:.19em;line-height:1.7;margin:13px auto 20px;max-width:300px}.splash-countdown-label{font-size:7px;letter-spacing:.24em}
+  .splash-countdown b{font-size:30px}.splash-countdown span{font-size:6px;letter-spacing:.13em}.enter-btn{margin-top:20px;padding:14px 22px}
+  .hero-photo{background-size:auto 100%;background-position:25% center}.hero-copy{padding-top:130px}.hero-title{font-size:70px}.names-stacked{grid-template-columns:1fr}
+}
+
+/* Keep day numbers editorial and out of the typography stack. */
+.day-intro .container{position:relative;z-index:2;padding-top:6vh}
+.day-intro .day-number{position:absolute;top:-2vh;right:3vw;font:400 clamp(90px,22vw,180px)/.7 var(--serif);opacity:.11;pointer-events:none}
+.day-intro h2,.day-intro .eyebrow,.day-intro p{position:relative;z-index:2}
+@media(max-width:560px){.day-intro .day-number{top:-1vh;right:1vw;font-size:105px}.day-intro h2{margin:18px 0 25px}}
+
+/* accessibility / motion */
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+}
+</style>
+</head>
+
+<body class="locked">
+<div class="noise"></div>
+<div class="progress" id="progress"></div>
+
+<!-- SPLASH / ENTRY -->
+<section class="splash" id="splash" aria-label="Enter wedding experience">
+  <div class="splash-photo"></div>
+  <div class="splash-overlay"></div>
+  <div class="splash-frame"></div>
+  <div class="splash-inner">
+    <div class="splash-top">NISHANT &amp; ADRIJA · RISHIKESH · 2026</div>
+    <div class="splash-kicker">A destination wedding story</div>
+    <h1 class="splash-title"><span>Adrija</span><em>with</em><span>Nishant</span></h1>
+    <div class="splash-saga">The Saha Sethi Saga</div>
+    <div class="splash-date">13 &amp; 14 December 2026 · Nirvana River Resort · Rishikesh</div>
+    <div class="splash-countdown-label">THE CELEBRATION BEGINS IN</div>
+    <div class="splash-countdown" aria-live="polite">
+      <div><b id="days">000</b><span>Days</span></div>
+      <div><b id="hours">00</b><span>Hours</span></div>
+      <div><b id="minutes">00</b><span>Minutes</span></div>
+      <div><b id="seconds">00</b><span>Seconds</span></div>
+    </div>
+    <button class="enter-btn" id="enterBtn"><span class="dot"></span>Enter the Saga</button>
+  </div>
+</section>
+
+<button class="music-toggle paused" id="musicToggle" aria-label="Toggle music">
+  <span class="music-bars"><i></i><i></i><i></i></span>
+</button>
+<audio id="bgMusic" preload="auto" loop src="./Music.mp3"></audio>
+
+<main id="site">
+
+  <!-- HERO -->
+  <section class="section hero" id="home">
+    <div class="hero-photo"></div>
+    <div class="hero-copy">
+      <div class="hero-mini reveal">Adrija with Nishant · Rishikesh · 2026</div>
+      <h1 class="hero-title reveal">
+        <span>The Saha</span>
+        <span class="saga">Sethi Saga</span>
+      </h1>
+      <div class="hero-bottom reveal">
+        <div>
+          <div class="hero-note">Two families. One beautiful beginning. A celebration waiting to unfold.</div>
+          <div class="hero-date" style="margin-top:20px">13 — 14 December 2026</div>
+        </div>
+        <div class="hero-scroll">Scroll to enter</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COUPLE INTRO -->
+  <section class="intro">
+    <div class="container intro-grid">
+      <div class="intro-portrait reveal">
+        <img src="https://i.supaimg.com/d22e5c7d-7490-48d2-bcdd-8dcd86476e68/29cdbacb-d375-4046-a70f-d44ec212a814.jpg" alt="Adrija and Nishant">
+      </div>
+      <div class="intro-copy reveal">
+        <div class="eyebrow">With love, from two families</div>
+        <h2>Adrija<br><em>with Nishant.</em></h2>
+        <div class="names names-stacked">
+          <div>
+            <div class="person-label">The Bride</div>
+            <div class="person-name">Adrija Saha</div>
+            <div class="person-detail">Daughter of Late Ratna Saha<br>&amp; Shri Chanchal Kumar Saha</div>
+          </div>
+          <div>
+            <div class="person-label">The Groom</div>
+            <div class="person-name">Nishant Sethi</div>
+            <div class="person-detail">Son of Smt Kamala<br>&amp; Shri Tara Chand Jain</div>
+          </div>
+        </div>
+        <div class="venue">
+          <strong>13 &amp; 14 December 2026</strong>
+          Nirvana River Resort, Rishikesh
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STORY BREAK -->
+  <section class="story-break">
+    <div class="container">
+      <div class="eyebrow" style="color:#d8c18b">The festivities unfold</div>
+      <h2>Scroll down<br><em>to reveal the itinerary.</em></h2>
+      <p>From sunshine and haldi to moonlit music, a morning of family traditions and the riverside wedding itself — every chapter has its own moment.</p>
+      <div class="story-arrow">Begin Day One ↓</div>
+    </div>
+  </section>
+
+  <!-- DAY 1 -->
+  <section class="day-reveal day1-reveal">
+  <section class="day-intro day1">
+    <div class="container">
+      <div class="day-number">01</div>
+      <div class="eyebrow" style="color:#d8c18b">13 December 2026</div>
+      <h2>Let the celebrations<br><em>begin.</em></h2>
+      <p>A sunlit afternoon by the river, followed by an evening of music, movement and a little bit of magic.</p>
+    </div>
+  </section>
+
+  <!-- HALDI -->
+  <section class="event haldi">
+    <div class="event-art">
+      <img src="https://i.ibb.co/4cWQntS/haldi-scene.png" alt="The Punjabi Haldi Carnival illustration" loading="lazy">
+    </div>
+    <div class="event-info">
+      <div class="event-index">01 · Day One · 13 December</div>
+      <h3>The Punjabi<br>Haldi Carnival</h3>
+      <div class="event-tagline">Sunshine, marigolds, laughter and a little Punjabi masti by the river.</div>
+      <div class="event-meta">
+        <div class="meta-row"><span>Time</span><span>1:00 PM onwards</span></div>
+        <div class="meta-row"><span>Venue</span><span>Riverside Lawn</span></div>
+      </div>
+      <div class="event-note">Come dressed in your happiest yellow. Think contemporary Punjabi charm, sunshine and effortless festive energy.</div>
+    </div>
+  </section>
+
+  <!-- SANGEET -->
+  <section class="event sangeet reverse">
+    <div class="event-art">
+      <img src="https://i.ibb.co/8LBcYGTK/sangeet-scene.png" alt="Mehfil-e-Sangeet illustration" loading="lazy">
+    </div>
+    <div class="event-info">
+      <div class="event-index">02 · Day One · 13 December</div>
+      <h3>Mehfil-e-<br>Sangeet</h3>
+      <div class="event-tagline">An evening of melody, glamour and a little old-world mehfil magic.</div>
+      <div class="event-meta">
+        <div class="meta-row"><span>Time</span><span>6:00 PM onwards</span></div>
+        <div class="meta-row"><span>Venue</span><span>Swimming Pool Lawn</span></div>
+      </div>
+      <div class="event-note">Bring your best evening look. Think rich colours, Indian couture, music and the kind of glamour that belongs under the stars.</div>
+    </div>
+  </section>
+  </section>
+
+  <!-- PHOTO INTERLUDE -->
+  <section class="photo-interlude">
+    <img src="https://i.supaimg.com/d22e5c7d-7490-48d2-bcdd-8dcd86476e68/f186180d-db79-4148-acfc-f5756ed88e3c.jpg" alt="Nishant and Adrija" loading="lazy">
+    <div class="quote reveal">
+      <p>And then, somewhere between the music and the laughter, it became a memory.</p>
+      <small>One celebration · countless little moments</small>
+    </div>
+  </section>
+
+  <!-- DAY 2 -->
+  <section class="day-reveal day2-reveal">
+  <section class="day-intro day2">
+    <div class="container">
+      <div class="day-number">02</div>
+      <div class="eyebrow" style="color:#d8c18b">14 December 2026</div>
+      <h2>A morning of family.<br><em>An afternoon of forever.</em></h2>
+      <p>Day two carries the heart of the celebration — traditions in the morning, the riverside wedding in the afternoon, and a final evening together.</p>
+    </div>
+  </section>
+
+  <!-- MAYRA -->
+  <section class="event mayra reverse">
+    <div class="event-art">
+      <img src="https://i.ibb.co/ymCBG7TQ/mayra-scene.png" alt="The Rajasthani Mayra illustration" loading="lazy">
+    </div>
+    <div class="event-info">
+      <div class="event-index">03 · Day Two · 14 December</div>
+      <h3>The Rajasthani<br>Mayra</h3>
+      <div class="event-tagline">A warm morning of mamas, family, tradition and colour.</div>
+      <div class="event-meta">
+        <div class="meta-row"><span>Time</span><span>8:00 AM onwards</span></div>
+        <div class="meta-row"><span>Venue</span><span>Front Lawn</span></div>
+      </div>
+      <div class="event-note">A morning rooted in family tradition. Come ready for a colourful, heartfelt celebration of the people who make every wedding complete.</div>
+    </div>
+  </section>
+
+  <!-- WEDDING -->
+  <section class="event wedding">
+    <div class="event-art">
+      <img src="https://i.ibb.co/yc6csr1W/wedding-scene.png" alt="Riverside Wedding illustration" loading="lazy">
+    </div>
+    <div class="event-info">
+      <div class="event-index">04 · Day Two · 14 December</div>
+      <h3>The Riverside<br>Wedding</h3>
+      <div class="event-tagline">A procession by the river, a mandap in the open air, and two families becoming one.</div>
+      <div class="event-meta">
+        <div class="meta-row"><span>Time</span><span>Baraat at 1:00 PM</span></div>
+        <div class="meta-row"><span>Venue</span><span>Riverside</span></div>
+      </div>
+      <div class="event-note">Please keep the palette soft and elegant. Ivory, cream and muted pastels only — no bright colours.</div>
+    </div>
+  </section>
+
+  <!-- RECEPTION -->
+  <section class="event reception reverse">
+    <div class="event-art">
+      <img src="https://i.supaimg.com/d22e5c7d-7490-48d2-bcdd-8dcd86476e68/0411489d-eb0d-4ae7-a302-f88e2d445c43.jpg" alt="Nishant and Adrija together" loading="lazy">
+    </div>
+    <div class="event-info">
+      <div class="event-index">05 · Day Two · 14 December</div>
+      <h3>The Grand<br>Reception</h3>
+      <div class="event-tagline">One last evening around the pool, with music, celebration and everyone we love.</div>
+      <div class="event-meta">
+        <div class="meta-row"><span>Time</span><span>6:00 PM onwards</span></div>
+        <div class="meta-row"><span>Venue</span><span>Poolside Lawn</span></div>
+      </div>
+      <div class="event-note">The final evening is all about celebrating together. Dress up, stay late and make the last night count.</div>
+    </div>
+  </section>
+  </section>
+
+  <!-- DAY 3 -->
+  <section class="day-reveal day3-reveal">
+  <section class="day-intro day3">
+    <div class="container">
+      <div class="day-number">03</div>
+      <div class="eyebrow" style="color:#d8c18b">15 December 2026</div>
+      <h2>Until the next<br><em>celebration.</em></h2>
+      <p>After two beautiful days together, we say goodbye to Rishikesh — but hopefully not to the memories.</p>
+      <div style="margin-top:30px;font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:#d8c18b">Checkout · 9:30 AM</div>
+    </div>
+  </section>
+  </section>
+
+
+  <!-- RSVP -->
+  <section class="rsvp" id="rsvp">
+    <div class="container rsvp-grid">
+      <div class="rsvp-copy reveal">
+        <div class="eyebrow">Your presence means everything</div>
+        <h2>Will you<br><em>join us?</em></h2>
+        <p>Tell us you're coming — we'll prepare the celebrations, and WhatsApp will take care of the rest.</p>
+        <button class="enter-btn" type="button" id="openDress" style="margin-top:28px">View Dresscodes</button>
+      </div>
+
+      <form class="rsvp-form reveal" id="rsvpForm">
+        <div class="two">
+          <div class="field">
+            <label for="guestName">Your name</label>
+            <input id="guestName" name="guestName" required placeholder="Full name">
+          </div>
+          <div class="field">
+            <label for="guestPhone">WhatsApp number</label>
+            <input id="guestPhone" name="guestPhone" type="tel" required placeholder="+91">
+          </div>
+        </div>
+
+        <div class="field">
+          <label>Will you be joining us?</label>
+          <div class="choice-row">
+            <label class="choice"><input type="radio" name="attendance" value="yes" id="rsvpYes" required>Yes, I'll be there</label>
+            <label class="choice"><input type="radio" name="attendance" value="no" id="rsvpNo">Sadly, I can't make it</label>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="partySize">Number of guests</label>
+            <select id="partySize" name="partySize" required>
+              <option value="" selected disabled>Select</option>
+              <option>1</option><option>2</option><option>3</option><option>4</option>
+              <option>5</option><option>6</option><option>7</option><option>8</option>
+              <option>9</option><option>10+</option>
+            </select>
+          </div>
+
+        <div class="field">
+          <label for="note">Anything we should know?</label>
+          <textarea id="note" name="note" placeholder="A little message for us, or anything we should know…"></textarea>
+        </div>
+
+        <button class="submit" type="submit">Confirm &amp; Send on WhatsApp →</button>
+        <div class="form-foot">Your details will be formatted into a beautifully written RSVP message. WhatsApp will open with the message completely typed out to Nishant's Father — you just need to press Send.</div>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div>THE SAHA SETHI SAGA · 2026</div>
+  <div style="margin-top:12px">Powered by <span>MultimediaWallah</span></div>
+</footer>
+
+<!-- ITINERARY MODAL -->
+<div class="modal" id="dressModal" role="dialog" aria-modal="true" aria-label="Dresscodes">
+  <div class="modal-box">
+    <button type="button" class="modal-close" id="closeDressModal" aria-label="Close dresscodes">×</button>
+    <div class="modal-head">
+      <div class="eyebrow">Guest fits</div>
+      <h2>Dresscodes</h2>
+    </div>
+    <div class="dress-modal-grid">
+      <div class="dress-modal-card">
+        <img src="https://i.ibb.co/rGJQf6jG/Punjabi-haldi-dress-yellow.png" alt="">
+        <h4>Punjabi Haldi Carnival</h4>
+        <p>1:00 PM · Riverside Lawn · Yellow suit + a hint of Punjabi</p>
+      </div>
+      <div class="dress-modal-card">
+        <img src="https://i.ibb.co/v63jjgrJ/durbaar-sangeet-dress.png" alt="">
+        <h4>Mehfil-e-Sangeet</h4>
+        <p>6:00 PM · Swimming Pool Lawn · Bollywood Glam</p>
+      </div>
+      <div class="dress-modal-card">
+        <img src="https://i.ibb.co/FbYCpbRS/rajasthan-outfit-for-mayra.png" alt="">
+        <h4>The Rajasthani Mayra</h4>
+        <p>8:00 AM · Front Lawn · Leheriya / Bandhej / Gharchola</p>
+      </div>
+      <div class="dress-modal-card">
+        <img src="https://i.ibb.co/sv1G0fMp/afternoon-shaadi-dress.png" alt="">
+        <h4>The Riverside Wedding</h4>
+        <p>1:00 PM Baraat · Riverside · Ivory / Pastel + Traditional Indian</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- DECLINE POPUP -->
+<div class="success" id="declineModal" aria-live="polite">
+  <div class="success-box">
+    <div class="check">♡</div>
+    <h3>So sorry, you will be missed!</h3>
+    <p>We completely understand and hope we get to celebrate together another time.</p>
+  </div>
+</div>
+
+<script>
+(() => {
+  "use strict";
+
+  const splash = document.getElementById("splash");
+  const enterBtn = document.getElementById("enterBtn");
+  const music = document.getElementById("bgMusic");
+  const musicToggle = document.getElementById("musicToggle");
+  const progress = document.getElementById("progress");
+
+  /* ---------- ENTRY + MUSIC ---------- */
+  async function startExperience(){
+    splash.classList.add("hidden");
+    document.body.classList.remove("locked");
+    try{
+      await music.play();
+      musicToggle.classList.remove("paused");
+    }catch(e){
+      musicToggle.classList.add("paused");
+    }
+    setTimeout(() => document.getElementById("home")?.scrollIntoView({behavior:"smooth"}), 500);
+  }
+  enterBtn.addEventListener("click", startExperience);
+
+  musicToggle.addEventListener("click", async () => {
+    if(music.paused){
+      try{ await music.play(); musicToggle.classList.remove("paused"); }catch(e){}
+    }else{
+      music.pause();
+      musicToggle.classList.add("paused");
+    }
+  });
+
+  /* ---------- SCROLL PROGRESS ---------- */
+  function updateProgress(){
+    const scrollTop = window.scrollY;
+    const max = document.documentElement.scrollHeight - window.innerHeight;
+    progress.style.width = (max > 0 ? scrollTop/max*100 : 0) + "%";
+  }
+  window.addEventListener("scroll", updateProgress, {passive:true});
+  updateProgress();
+
+  /* ---------- REVEALS ---------- */
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        entry.target.classList.add("visible");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {threshold:.12});
+  document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
+
+  /* ---------- COUNTDOWN ---------- */
+  const target = new Date("2026-12-13T13:00:00+05:30").getTime();
+  function countdown(){
+    const now = Date.now();
+    let diff = Math.max(0, target - now);
+    const days = Math.floor(diff/86400000); diff %= 86400000;
+    const hours = Math.floor(diff/3600000); diff %= 3600000;
+    const minutes = Math.floor(diff/60000); diff %= 60000;
+    const seconds = Math.floor(diff/1000);
+    document.getElementById("days").textContent = String(days).padStart(3,"0");
+    document.getElementById("hours").textContent = String(hours).padStart(2,"0");
+    document.getElementById("minutes").textContent = String(minutes).padStart(2,"0");
+    document.getElementById("seconds").textContent = String(seconds).padStart(2,"0");
+  }
+  countdown();
+  setInterval(countdown,1000);
+
+
+  /* ---------- PARALLAX DAY REVEALS ---------- */
+  const dayReveals = [...document.querySelectorAll('.day-reveal')];
+  dayReveals.forEach(day => {
+    day.querySelectorAll('.event').forEach(event => event.classList.add('reveal-event'));
+  });
+  function updateDayReveals(){
+    const vh = window.innerHeight || 1;
+    dayReveals.forEach(day => {
+      const r = day.getBoundingClientRect();
+      const intro = day.querySelector('.day-intro');
+      const active = r.top < vh * .92 && r.bottom > vh * .08;
+      if(intro && active){
+        const p = Math.max(0, Math.min(1, (vh - Math.max(0,r.top)) / vh));
+        intro.style.transform = `scale(${1 - p*.055})`;
+        intro.style.filter = `brightness(${1 - p*.12})`;
+      }else if(intro){intro.style.transform='';intro.style.filter='';}
+      day.querySelectorAll('.reveal-event').forEach(event => {
+        const er = event.getBoundingClientRect();
+        if(er.top < vh * .88 && er.bottom > vh * .12) event.classList.add('event-open');
+      });
+    });
+  }
+  window.addEventListener('scroll', updateDayReveals, {passive:true});
+  window.addEventListener('resize', updateDayReveals); updateDayReveals();
+
+  /* ---------- MODALS ---------- */
+  document.getElementById("openDress").addEventListener("click", () => {
+    document.getElementById("dressModal").classList.add("open");
+  });
+  
+  // Directly bound close button
+  document.getElementById("closeDressModal").addEventListener("click", () => {
+    document.getElementById("dressModal").classList.remove("open");
+  });
+
+  document.querySelectorAll(".modal").forEach(modal => {
+    modal.addEventListener("click", e => {
+      if(e.target === modal) modal.classList.remove("open");
+    });
+  });
+
+  document.addEventListener("keydown", e => {
+    if(e.key === "Escape"){
+      document.querySelectorAll(".modal.open").forEach(x => x.classList.remove("open"));
+    }
+  });
+
+  /* ---------- RSVP + WHATSAPP ---------- */
+  const form = document.getElementById("rsvpForm");
+  const declineRadio = document.getElementById("rsvpNo");
+  const declineModal = document.getElementById("declineModal");
+
+  // Immediate action on "Sadly, I can't make it" press
+  declineRadio.addEventListener("click", () => {
+    declineModal.classList.add("open");
+    document.body.classList.add("locked");
+    // Wait exactly 3 seconds, then refresh the page
+    setTimeout(() => {
+      window.scrollTo(0, 0);
+      window.location.reload();
+    }, 3000);
+  });
+
+  form.addEventListener("submit", e => {
+    e.preventDefault();
+    if(!form.checkValidity()){
+      form.reportValidity();
+      return;
+    }
+
+    const name = document.getElementById("guestName").value.trim();
+    const phone = document.getElementById("guestPhone").value.trim();
+    const party = document.getElementById("partySize").value;
+    const note = document.getElementById("note").value.trim();
+
+    // The beautiful formatting directed to the groom's father
+    const message = `Hello Tara Chand Jain Ji! ✨\n\nIt's ${name} here.\n\nI am absolutely thrilled to confirm my presence for The Saha Sethi Saga — Adrija & Nishant’s destination wedding in Rishikesh!\n\n✨ Number of guests: ${party}\n📞 WhatsApp: ${phone}${note ? `\n📝 A little note: ${note}` : ""}\n\nLooking forward to celebrating with you! 🥂`;
+
+    const wa = "919007341137";
+    const url = "https://api.whatsapp.com/send?phone=" + wa + "&text=" + encodeURIComponent(message);
+
+    // Navigate straight to WhatsApp to pre-type the message
+    window.location.href = url;
+  });
+
+})();
+</script>
+</body>
+</html>
