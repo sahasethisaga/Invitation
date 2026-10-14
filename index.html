@@ -6,8 +6,21 @@
   <meta name="theme-color" content="#101a17">
   <meta name="description" content="Adrija and Nishant's destination wedding in Rishikesh, 13–14 December 2026.">
   <title>The Saha Sethi Saga</title>
+
+  <!-- DNS & Connection Pre-warming for faster image & font delivery -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://wsrv.nl" crossorigin>
+  <link rel="preconnect" href="https://i.ibb.co" crossorigin>
+  <link rel="preconnect" href="https://i.supaimg.com" crossorigin>
+  <link rel="preconnect" href="https://www.nirvanariverresort.com" crossorigin>
+  <link rel="dns-prefetch" href="https://wsrv.nl">
+  <link rel="dns-prefetch" href="https://i.ibb.co">
+
+  <!-- High-priority preload for above-the-fold Hero & first Couple Portrait -->
+  <link rel="preload" as="image" href="https://wsrv.nl/?url=https://i.ibb.co/XkYZn36Y/1000207701-jpg.jpg&w=1600&q=82&output=webp" fetchpriority="high">
+  <link rel="preload" as="image" href="https://wsrv.nl/?url=https://i.ibb.co/4R6jTNL4/1000207455-jpg.jpg&w=900&q=82&output=webp">
+
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
@@ -23,6 +36,8 @@
       --serif: "Cormorant Garamond", Georgia, serif;
       --sans: "Manrope", "DM Sans", system-ui, sans-serif;
       --ease: cubic-bezier(.22, 1, .36, 1);
+      --hero-bg: url("https://wsrv.nl/?url=https://i.ibb.co/XkYZn36Y/1000207701-jpg.jpg&w=1600&q=82&output=webp");
+      --banner-bg: url("https://wsrv.nl/?url=https://i.ibb.co/nNN9mTNk/1000207382-jpg.jpg&w=1600&q=82&output=webp");
     }
 
     *, *::before, *::after { box-sizing: border-box; }
@@ -33,6 +48,10 @@
     a { color: inherit; text-decoration: none; }
     button { font: inherit; cursor: pointer; }
     ::selection { background: var(--gold); color: var(--deep); }
+
+    /* Smooth fade-in for optimized images */
+    img[data-opt] { opacity: 0; transition: opacity .5s ease, transform 1s var(--ease); }
+    img[data-opt].loaded { opacity: 1; }
 
     .container { width: min(1160px, calc(100% - 48px)); margin-inline: auto; }
     .eyebrow { color: var(--gold-dark); font-size: 9px; font-weight: 700; letter-spacing: .3em; line-height: 1.7; text-transform: uppercase; }
@@ -79,7 +98,7 @@
 
     /* Main hero */
     .hero { position: relative; isolation: isolate; display: flex; align-items: end; min-height: 100svh; overflow: hidden; color: #fff; background: #15231f; }
-    .hero::before { content: ""; position: absolute; z-index: -2; inset: 0; background: url("https://i.ibb.co/XkYZn36Y/1000207701-jpg.jpg") 48% center / cover no-repeat; transform: scale(1.015); }
+    .hero::before { content: ""; position: absolute; z-index: -2; inset: 0; background: var(--hero-bg) 48% center / cover no-repeat; transform: scale(1.015); }
     .hero::after { content: ""; position: absolute; z-index: -1; inset: 0; background: linear-gradient(180deg, rgba(8,19,16,.12) 0%, rgba(8,19,16,.08) 34%, rgba(8,19,16,.75) 100%), linear-gradient(90deg, rgba(8,20,16,.35), transparent 72%); }
     .hero-copy { width: min(1160px, calc(100% - 48px)); margin: 0 auto; padding: 150px 0 clamp(58px, 9vh, 110px); }
     .hero-kicker { color: #e7d4a6; font-size: 9px; letter-spacing: .3em; text-transform: uppercase; }
@@ -109,8 +128,8 @@
     .moments-head h2 { margin: 10px 0 0; font: 500 clamp(43px, 7vw, 79px)/.82 var(--serif); letter-spacing: -.04em; }
     .moments-head p { max-width: 265px; margin: 0; color: #c8c8bc; font-size: 11px; line-height: 1.8; }
     .moment-grid { display: grid; grid-template-columns: 1.1fr .9fr 1fr; grid-template-rows: 300px 270px; gap: 12px; }
-    .moment { position: relative; overflow: hidden; background: #334039; }
-    .moment img { width: 100%; height: 100%; object-fit: cover; transition: transform 1s var(--ease); }
+    .moment { position: relative; overflow: hidden; background: #26352f; }
+    .moment img { width: 100%; height: 100%; object-fit: cover; transition: opacity .5s ease, transform 1s var(--ease); }
     .moment:hover img { transform: scale(1.045); }
     .moment:nth-child(1) { grid-row: span 2; }
     .moment:nth-child(2) { grid-column: 2; }
@@ -120,7 +139,7 @@
     .moment-caption { position: absolute; inset: auto 0 0; padding: 40px 18px 16px; color: white; background: linear-gradient(transparent, rgba(0,0,0,.48)); font: 400 22px/1 var(--serif); }
 
     .editorial-banner { position: relative; min-height: min(76svh, 760px); display: flex; align-items: center; overflow: hidden; color: white; background: #1c2b26; }
-    .editorial-banner::before { content: ""; position: absolute; inset: 0; background: url("https://i.ibb.co/nNN9mTNk/1000207382-jpg.jpg") 42% center / cover no-repeat; }
+    .editorial-banner::before { content: ""; position: absolute; inset: 0; background: var(--banner-bg) 42% center / cover no-repeat; }
     .editorial-banner::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(9,20,16,.08) 0%, rgba(9,20,16,.13) 42%, rgba(9,20,16,.77) 100%); }
     .banner-copy { position: relative; z-index: 1; width: min(1160px, calc(100% - 48px)); margin: 0 auto; display: flex; justify-content: end; }
     .banner-copy-inner { max-width: 420px; padding: 70px 0; }
@@ -139,7 +158,7 @@
     .event.reverse .event-art { order: 2; }
     .event.reverse .event-info { order: 1; }
     .event-art { min-height: 560px; overflow: hidden; background: #ddd3c2; }
-    .event-art img { width: 100%; height: 100%; min-height: 560px; object-fit: cover; transition: transform 1.2s var(--ease); }
+    .event-art img { width: 100%; height: 100%; min-height: 560px; object-fit: cover; transition: opacity .5s ease, transform 1.2s var(--ease); }
     .event:hover .event-art img { transform: scale(1.025); }
     .event-info { display: flex; flex-direction: column; justify-content: center; padding: clamp(42px, 7vw, 90px); }
     .event-index { color: var(--gold-dark); font-size: 8px; font-weight: 700; letter-spacing: .24em; text-transform: uppercase; }
@@ -175,7 +194,7 @@
     .venue-gallery { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 8px; min-height: 255px; }
     .venue-gallery a { position: relative; min-height: 120px; overflow: hidden; background: #c9c6b9; }
     .venue-gallery a:first-child { grid-row: span 2; }
-    .venue-gallery img { width: 100%; height: 100%; position: absolute; inset: 0; object-fit: cover; transition: transform .7s var(--ease); }
+    .venue-gallery img { width: 100%; height: 100%; position: absolute; inset: 0; object-fit: cover; transition: opacity .5s ease, transform .7s var(--ease); }
     .venue-gallery a:hover img { transform: scale(1.04); }
     .venue-gallery span { position: absolute; z-index: 1; bottom: 0; left: 0; right: 0; padding: 25px 10px 10px; color: white; font-size: 8px; letter-spacing: .12em; text-transform: uppercase; background: linear-gradient(transparent, rgba(0,0,0,.55)); }
     .location-footnote { margin-top: 15px; color: #74776f; font-size: 9px; line-height: 1.7; }
@@ -189,10 +208,12 @@
     .dress-card { position: relative; display: flex; flex-direction: column; min-width: 0; overflow: hidden; color: var(--ink); border: 1px solid rgba(255,255,255,.1); background: #f1e8d8; }
     .dress-card-art { height: 300px; display: flex; align-items: center; justify-content: center; padding: 12px; }
     .dress-card-art img { width: 100%; height: 100%; object-fit: contain; }
-    .dress-card-info { min-height: 123px; padding: 17px 17px 20px; background: #f4eddf; }
+    .dress-card-info { flex: 1; display: flex; flex-direction: column; padding: 18px 17px 20px; background: #f4eddf; }
     .dress-card-day { color: #8e7342; font-size: 7px; letter-spacing: .2em; text-transform: uppercase; }
-    .dress-card h3 { margin: 8px 0; font: 500 clamp(24px, 2.7vw, 33px)/.85 var(--serif); }
-    .dress-card p { margin: 0; color: #565d57; font-size: 9px; line-height: 1.65; }
+    .dress-card h3 { margin: 8px 0 12px; font: 500 clamp(24px, 2.7vw, 33px)/.85 var(--serif); }
+    .dress-attire { margin-top: auto; padding-top: 10px; border-top: 1px solid rgba(24, 35, 30, .1); display: grid; gap: 8px; }
+    .dress-role { font-size: 9px; line-height: 1.6; color: #565d57; }
+    .dress-role strong { display: inline-block; margin-right: 5px; color: #7a6032; font-size: 7.5px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; }
     .dress-card:nth-child(1) .dress-card-art { background: linear-gradient(160deg, #fff9db, #f3d36c); }
     .dress-card:nth-child(2) .dress-card-art { background: linear-gradient(160deg, #f5e8e6, #c8a5a4); }
     .dress-card:nth-child(3) .dress-card-art { background: linear-gradient(160deg, #fff0dc, #e8b77c); }
@@ -262,9 +283,10 @@
       .venue-gallery { min-height: 270px; }
       .dress-grid { gap: 8px; margin-top: 34px; }
       .dress-card-art { height: 230px; padding: 8px; }
-      .dress-card-info { min-height: 120px; padding: 14px 12px 16px; }
-      .dress-card h3 { font-size: 25px; }
-      .dress-card p { font-size: 8px; }
+      .dress-card-info { padding: 14px 12px 16px; }
+      .dress-card h3 { font-size: 25px; margin-bottom: 10px; }
+      .dress-role { font-size: 8.5px; line-height: 1.55; }
+      .dress-role strong { font-size: 7px; }
     }
     @media (max-width: 380px) {
       .family-details { grid-template-columns: 1fr; }
@@ -275,7 +297,7 @@
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
       *, *::before, *::after { animation: none !important; transition: none !important; }
-      .reveal { opacity: 1; transform: none; }
+      .reveal, img[data-opt] { opacity: 1; transform: none; }
     }
   </style>
 </head>
@@ -321,7 +343,13 @@
     <section class="couple-section section-pad" id="couple">
       <div class="container couple-grid">
         <div class="couple-photo reveal">
-          <img src="https://i.ibb.co/4R6jTNL4/1000207455-jpg.jpg" alt="Adrija and Nishant together" loading="lazy">
+          <img
+            data-opt
+            src="https://wsrv.nl/?url=https://i.ibb.co/4R6jTNL4/1000207455-jpg.jpg&w=900&q=82&output=webp"
+            data-fallback="https://i.ibb.co/4R6jTNL4/1000207455-jpg.jpg"
+            alt="Adrija and Nishant together"
+            fetchpriority="high"
+            decoding="async">
         </div>
         <div class="couple-copy reveal">
           <div class="eyebrow">The families</div>
@@ -355,20 +383,45 @@
         </div>
         <div class="moment-grid">
           <div class="moment reveal">
-            <img src="https://i.ibb.co/YFfWw9Zm/1000207447-jpg.jpg" alt="Nishant gently brushing Adrija's hair behind her ear" loading="lazy">
+            <img
+              data-opt
+              src="https://wsrv.nl/?url=https://i.ibb.co/YFfWw9Zm/1000207447-jpg.jpg&w=900&q=80&output=webp"
+              data-fallback="https://i.ibb.co/YFfWw9Zm/1000207447-jpg.jpg"
+              alt="Nishant gently brushing Adrija's hair behind her ear"
+              decoding="async">
             <div class="moment-caption">Just the two of us.</div>
           </div>
           <div class="moment reveal">
-            <img src="https://i.ibb.co/Y7y23H28/1000207324-jpg.jpg" alt="Adrija portrait" loading="lazy">
+            <img
+              data-opt
+              src="https://wsrv.nl/?url=https://i.ibb.co/Y7y23H28/1000207324-jpg.jpg&w=700&q=80&output=webp"
+              data-fallback="https://i.ibb.co/Y7y23H28/1000207324-jpg.jpg"
+              alt="Adrija portrait"
+              decoding="async">
           </div>
           <div class="moment reveal">
-            <img src="https://i.ibb.co/Lz7QPX92/1000207342-jpg.jpg" alt="Nishant portrait" loading="lazy">
+            <img
+              data-opt
+              src="https://wsrv.nl/?url=https://i.ibb.co/Lz7QPX92/1000207342-jpg.jpg&w=700&q=80&output=webp"
+              data-fallback="https://i.ibb.co/Lz7QPX92/1000207342-jpg.jpg"
+              alt="Nishant portrait"
+              decoding="async">
           </div>
           <div class="moment reveal">
-            <img src="https://i.ibb.co/6zKPC5x/1000207698-jpg.jpg" alt="Adrija and Nishant sharing a moment" loading="lazy">
+            <img
+              data-opt
+              src="https://wsrv.nl/?url=https://i.ibb.co/6zKPC5x/1000207698-jpg.jpg&w=700&q=80&output=webp"
+              data-fallback="https://i.ibb.co/6zKPC5x/1000207698-jpg.jpg"
+              alt="Adrija and Nishant sharing a moment"
+              decoding="async">
           </div>
           <div class="moment reveal">
-            <img src="https://i.ibb.co/7tFFHpsx/1000207704-jpg.jpg" alt="Adrija and Nishant together" loading="lazy">
+            <img
+              data-opt
+              src="https://wsrv.nl/?url=https://i.ibb.co/7tFFHpsx/1000207704-jpg.jpg&w=700&q=80&output=webp"
+              data-fallback="https://i.ibb.co/7tFFHpsx/1000207704-jpg.jpg"
+              alt="Adrija and Nishant together"
+              decoding="async">
           </div>
         </div>
       </div>
@@ -389,13 +442,18 @@
         <div class="day-heading-inner reveal">
           <div class="eyebrow">13 December 2026</div>
           <h2>Day One</h2>
-          
         </div>
       </div>
 
       <article class="event haldi">
         <div class="event-art">
-          <img src="https://i.ibb.co/RpwDfLV7/Riverside-Haldi-Celebration-Beneath-Marigolds.png" alt="Riverside Haldi Celebration Beneath Marigolds" loading="lazy">
+          <img
+            data-opt
+            src="https://wsrv.nl/?url=https://i.ibb.co/RpwDfLV7/Riverside-Haldi-Celebration-Beneath-Marigolds.png&w=1000&q=80&output=webp"
+            data-fallback="https://i.ibb.co/RpwDfLV7/Riverside-Haldi-Celebration-Beneath-Marigolds.png"
+            alt="Riverside Haldi Celebration Beneath Marigolds"
+            loading="lazy"
+            decoding="async">
         </div>
         <div class="event-info reveal">
           <div class="event-index">01 · Afternoon</div>
@@ -410,7 +468,13 @@
 
       <article class="event sangeet reverse">
         <div class="event-art">
-          <img src="https://i.ibb.co/3y7XNwL4/file-00000000734881f4a1916c72a575ecc9.png" alt="Laal Ishq sangeet illustration" loading="lazy">
+          <img
+            data-opt
+            src="https://wsrv.nl/?url=https://i.ibb.co/3y7XNwL4/file-00000000734881f4a1916c72a575ecc9.png&w=1000&q=80&output=webp"
+            data-fallback="https://i.ibb.co/3y7XNwL4/file-00000000734881f4a1916c72a575ecc9.png"
+            alt="Laal Ishq sangeet illustration"
+            loading="lazy"
+            decoding="async">
         </div>
         <div class="event-info reveal">
           <div class="event-index">02 · Evening</div>
@@ -428,13 +492,18 @@
         <div class="day-heading-inner reveal">
           <div class="eyebrow">14 December 2026</div>
           <h2>Day Two</h2>
-          
         </div>
       </div>
 
       <article class="event mayra reverse">
         <div class="event-art">
-          <img src="https://i.ibb.co/ymCBG7TQ/mayra-scene.png" alt="Traditional Rajasthani Mayra illustration" loading="lazy">
+          <img
+            data-opt
+            src="https://wsrv.nl/?url=https://i.ibb.co/ymCBG7TQ/mayra-scene.png&w=1000&q=80&output=webp"
+            data-fallback="https://i.ibb.co/ymCBG7TQ/mayra-scene.png"
+            alt="Traditional Rajasthani Mayra illustration"
+            loading="lazy"
+            decoding="async">
         </div>
         <div class="event-info reveal">
           <div class="event-index">03 · Morning</div>
@@ -449,7 +518,13 @@
 
       <article class="event wedding">
         <div class="event-art">
-          <img src="https://i.ibb.co/yc6csr1W/wedding-scene.png" alt="Wedding by the river illustration" loading="lazy">
+          <img
+            data-opt
+            src="https://wsrv.nl/?url=https://i.ibb.co/yc6csr1W/wedding-scene.png&w=1000&q=80&output=webp"
+            data-fallback="https://i.ibb.co/yc6csr1W/wedding-scene.png"
+            alt="Wedding by the river illustration"
+            loading="lazy"
+            decoding="async">
         </div>
         <div class="event-info reveal">
           <div class="event-index">04 · Afternoon</div>
@@ -464,7 +539,13 @@
 
       <article class="event reception reverse">
         <div class="event-art">
-          <img src="https://i.supaimg.com/d22e5c7d-7490-48d2-bcdd-8dcd86476e68/0411489d-eb0d-4ae7-a302-f88e2d445c43.jpg" alt="Adrija and Nishant together" loading="lazy">
+          <img
+            data-opt
+            src="https://wsrv.nl/?url=https://i.supaimg.com/d22e5c7d-7490-48d2-bcdd-8dcd86476e68/0411489d-eb0d-4ae7-a302-f88e2d445c43.jpg&w=1000&q=80&output=webp"
+            data-fallback="https://i.supaimg.com/d22e5c7d-7490-48d2-bcdd-8dcd86476e68/0411489d-eb0d-4ae7-a302-f88e2d445c43.jpg"
+            alt="Adrija and Nishant together"
+            loading="lazy"
+            decoding="async">
         </div>
         <div class="event-info reveal">
           <div class="event-index">05 · Evening</div>
@@ -511,15 +592,30 @@
             </div>
             <div class="venue-gallery" aria-label="Venue photo preview">
               <a href="https://www.nirvanariverresort.com/gallery.html" target="_blank" rel="noopener" aria-label="See Nirvana River Resort pool photos">
-                <img src="https://www.nirvanariverresort.com/images/swimming-pool-in-rishikesh.webp?q=80&amp;w=800" alt="Swimming pool at Nirvana River Resort" loading="lazy">
+                <img
+                  data-opt
+                  src="https://www.nirvanariverresort.com/images/swimming-pool-in-rishikesh.webp?q=80&amp;w=800"
+                  alt="Swimming pool at Nirvana River Resort"
+                  loading="lazy"
+                  decoding="async">
                 <span>Pool &amp; views</span>
               </a>
               <a href="https://www.nirvanariverresort.com/gallery.html" target="_blank" rel="noopener" aria-label="See Nirvana River Resort wedding and event photos">
-                <img src="https://www.nirvanariverresort.com/images/rishikesh-wedding-resort-3.webp?q=80&amp;w=800" alt="Event space at Nirvana River Resort" loading="lazy">
+                <img
+                  data-opt
+                  src="https://www.nirvanariverresort.com/images/rishikesh-wedding-resort-3.webp?q=80&amp;w=800"
+                  alt="Event space at Nirvana River Resort"
+                  loading="lazy"
+                  decoding="async">
                 <span>Event spaces</span>
               </a>
               <a href="https://www.nirvanariverresort.com/gallery.html" target="_blank" rel="noopener" aria-label="See Nirvana River Resort cottage photos">
-                <img src="https://www.nirvanariverresort.com/images/swiss-cottage-rishikesh-7.webp?q=80&amp;w=800" alt="Cottages at Nirvana River Resort" loading="lazy">
+                <img
+                  data-opt
+                  src="https://www.nirvanariverresort.com/images/swiss-cottage-rishikesh-7.webp?q=80&amp;w=800"
+                  alt="Cottages at Nirvana River Resort"
+                  loading="lazy"
+                  decoding="async">
                 <span>Resort stays</span>
               </a>
             </div>
@@ -539,35 +635,82 @@
         </div>
         <div class="dress-grid">
           <article class="dress-card reveal">
-            <div class="dress-card-art"><img src="https://i.ibb.co/rGJQf6jG/Punjabi-haldi-dress-yellow.png" alt="Yellow outfit inspiration for the haldi" loading="lazy"></div>
+            <div class="dress-card-art">
+              <img
+                data-opt
+                src="https://wsrv.nl/?url=https://i.ibb.co/rGJQf6jG/Punjabi-haldi-dress-yellow.png&w=650&q=82&output=webp"
+                data-fallback="https://i.ibb.co/rGJQf6jG/Punjabi-haldi-dress-yellow.png"
+                alt="Yellow outfit inspiration for the haldi"
+                loading="lazy"
+                decoding="async">
+            </div>
             <div class="dress-card-info">
               <div class="dress-card-day">13 December · 1 PM</div>
               <h3>Bhangra Ta Sajda</h3>
-              <p>Guests are requested to come dressed in shades of yellow, orange, pink and lavender.</p>
+              <div class="dress-attire">
+                <div class="dress-role"><strong>Women</strong>Ethnic silhouettes in mustard yellow, coral, fuchsia or soft lilac.</div>
+                <div class="dress-role"><strong>Men</strong>Punjabi kurtas, Pathani suits or festive waistcoat sets.</div>
+              </div>
             </div>
           </article>
+
           <article class="dress-card reveal">
-            <div class="dress-card-art"><img src="https://i.ibb.co/v63jjgrJ/durbaar-sangeet-dress.png" alt="Evening sangeet outfit inspiration" loading="lazy"></div>
+            <div class="dress-card-art">
+              <img
+                data-opt
+                src="https://wsrv.nl/?url=https://i.ibb.co/v63jjgrJ/durbaar-sangeet-dress.png&w=650&q=82&output=webp"
+                data-fallback="https://i.ibb.co/v63jjgrJ/durbaar-sangeet-dress.png"
+                alt="Evening sangeet outfit inspiration"
+                loading="lazy"
+                decoding="async">
+            </div>
             <div class="dress-card-info">
               <div class="dress-card-day">13 December · 6 PM</div>
               <h3>Laal Ishq</h3>
-              <p>Sarees, lehengas or Anarkalis—anything blingy and festive, in any colour, including red.</p>
+              <div class="dress-attire">
+                <div class="dress-role"><strong>Women</strong>Festive sarees, lehengas, Anarkalis or Indo-western fits in rich jewel tones.</div>
+                <div class="dress-role"><strong>Men</strong>Embroidered bandhgalas, ethnic jackets or statement Indo-western outfits.</div>
+              </div>
             </div>
           </article>
+
           <article class="dress-card reveal">
-            <div class="dress-card-art"><img src="https://i.ibb.co/FbYCpbRS/rajasthan-outfit-for-mayra.png" alt="Rajasthani outfit inspiration for Mayra" loading="lazy"></div>
+            <div class="dress-card-art">
+              <img
+                data-opt
+                src="https://wsrv.nl/?url=https://i.ibb.co/FbYCpbRS/rajasthan-outfit-for-mayra.png&w=650&q=82&output=webp"
+                data-fallback="https://i.ibb.co/FbYCpbRS/rajasthan-outfit-for-mayra.png"
+                alt="Rajasthani outfit inspiration for Mayra"
+                loading="lazy"
+                decoding="async">
+            </div>
             <div class="dress-card-info">
               <div class="dress-card-day">14 December · 8 AM</div>
               <h3>Beero Bhaat Bharan Ne Aayo</h3>
-              <p>Leheriya · Bandhej · Gharchola</p>
+              <div class="dress-attire">
+                <div class="dress-role"><strong>Women</strong>Leheriya, Bandhani or Gharchola · Rajasthani traditional outfits.</div>
+                <div class="dress-role"><strong>Men</strong>Classic kurtas, textured waistcoats or bandhgalas · safas welcome.</div>
+              </div>
             </div>
           </article>
+
           <article class="dress-card reveal">
-            <div class="dress-card-art"><img src="https://i.ibb.co/sv1G0fMp/afternoon-shaadi-dress.png" alt="Ivory and pastel wedding outfit inspiration" loading="lazy"></div>
+            <div class="dress-card-art">
+              <img
+                data-opt
+                src="https://wsrv.nl/?url=https://i.ibb.co/sv1G0fMp/afternoon-shaadi-dress.png&w=650&q=82&output=webp"
+                data-fallback="https://i.ibb.co/sv1G0fMp/afternoon-shaadi-dress.png"
+                alt="Ivory and pastel wedding outfit inspiration"
+                loading="lazy"
+                decoding="async">
+            </div>
             <div class="dress-card-info">
               <div class="dress-card-day">14 December · 1 PM Baraat</div>
               <h3>Pahari Shaadi</h3>
-              <p>Ivory · soft pastels · traditional Indian</p>
+              <div class="dress-attire">
+                <div class="dress-role"><strong>Women</strong>Shades of ivory &amp; soft pastels · Indian traditional ensembles.</div>
+                <div class="dress-role"><strong>Men</strong>Classic sherwanis, tailored bandhgalas or pastel kurtas.</div>
+              </div>
             </div>
           </article>
         </div>
@@ -610,6 +753,57 @@
       }
       updateCountdown();
       window.setInterval(updateCountdown, 1000);
+
+      /* Image optimization & resilient fallback handler */
+      const optImages = document.querySelectorAll("img[data-opt]");
+      optImages.forEach((img) => {
+        const markLoaded = () => img.classList.add("loaded");
+        img.addEventListener("load", markLoaded, { once: true });
+        img.addEventListener("error", () => {
+          const fallback = img.getAttribute("data-fallback");
+          if (fallback && img.src !== fallback) {
+            img.src = fallback;
+          } else {
+            markLoaded();
+          }
+        });
+        if (img.complete && img.naturalWidth > 0) {
+          markLoaded();
+        }
+      });
+
+      /* Verify CSS background WebP proxy and fallback to raw URL if blocked */
+      function verifyBgImage(proxyUrl, rawUrl, cssVar) {
+        const probe = new Image();
+        probe.onerror = () => {
+          document.documentElement.style.setProperty(cssVar, `url("${rawUrl}")`);
+        };
+        probe.src = proxyUrl;
+      }
+      verifyBgImage(
+        "https://wsrv.nl/?url=https://i.ibb.co/XkYZn36Y/1000207701-jpg.jpg&w=1600&q=82&output=webp",
+        "https://i.ibb.co/XkYZn36Y/1000207701-jpg.jpg",
+        "--hero-bg"
+      );
+      verifyBgImage(
+        "https://wsrv.nl/?url=https://i.ibb.co/nNN9mTNk/1000207382-jpg.jpg&w=1600&q=82&output=webp",
+        "https://i.ibb.co/nNN9mTNk/1000207382-jpg.jpg",
+        "--banner-bg"
+      );
+
+      /* Pre-warm below-the-fold images while guest views the splash screen */
+      const warmQueue = () => {
+        document.querySelectorAll('img[loading="lazy"]').forEach((img, index) => {
+          window.setTimeout(() => {
+            img.loading = "eager";
+          }, 400 + index * 180);
+        });
+      };
+      if ("requestIdleCallback" in window) {
+        window.requestIdleCallback(warmQueue, { timeout: 1500 });
+      } else {
+        window.addEventListener("load", warmQueue, { once: true });
+      }
 
       async function startExperience() {
         splash.classList.add("hidden");
